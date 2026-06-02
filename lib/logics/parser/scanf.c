@@ -8,8 +8,9 @@ void asupkeun(char* line){
     char temp[1025] = "";
     int isFirstArg = 1;
 
-    start(line);
+    START(line); 
     inc(line); // skip "asupkeun"
+    cc = line[idx];
 
     while(!EOP()){
         while(cc == ' ' && !EOP()) INC(line);

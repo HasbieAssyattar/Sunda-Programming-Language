@@ -9,8 +9,11 @@ void ngagorowok(char* line){
     int isFirstArg = 1;
     int noNewline = 0;
 
-    start(line);
-    inc(line); // skip "Ngagorowok"
+    START(line); // Inisialisasi mesin karakter ti awal baris
+    inc(line);   // Skip "Ngagorowok" (mesin kata)
+    // Mesin karakter (idx & cc) bakal otomatis nyingkron saatos inc(line) dumasar kana logika anyar nu ku urang ditambahkeun upami diperyogikeun, atanapi urang paksa di dieu:
+    cc = line[idx]; 
+
 
 
 

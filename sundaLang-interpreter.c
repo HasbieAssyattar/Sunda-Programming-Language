@@ -34,14 +34,28 @@ int main(int argc, char *argv[]) {
 
     if(!error){ // jika tidak ditemukan error
         printf(GREEN "Interpretation successful!\n" RESET); // print success
-        write("sundaLang.c"); // write tape ke dalam file sundaLang.c
-        // kompilasi file, dan langsung eksekusi
+        
+        // Buat nama output berdasarkan nama file input
+        char outputName[256];
+        char cFile[256];
+        strcpy(outputName, argv[1]);
+        char *dot = strrchr(outputName, '.');
+        if (dot != NULL) *dot = '\0'; // Hilangkan ekstensi .sundaLang
+        
+        sprintf(cFile, "%s.c", outputName);
+        write(cFile); // Simpan hasil transpiling ke file .c
+        
+        char command[512];
         #ifdef _WIN32
-            system("gcc sundaLang.c -o sundaLang && sundaLang");
+            sprintf(command, "gcc %s -o %s && %s", cFile, outputName, outputName);
         #else
-            system("gcc sundaLang.c -o sundaLang && ./sundaLang");
+            sprintf(command, "gcc %s -o %s && ./%s", cFile, outputName, outputName);
         #endif
-        remove("sundaLang.c"); // remove file sundaLang.c
+        
+        system(command);
+        
+        // Hapus file C perantara agar folder tetap bersih, tapi simpan EXE-nya
+        remove(cFile); 
     }else{ // jika ditemukan error
         printf(RED "Interpretation failed!\n" RESET); // print failed
     }

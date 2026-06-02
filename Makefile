@@ -1,4 +1,4 @@
-BINARY=sundaLang
+BINARY=sundaLangCompiler
 SOURCES=sundaLang-interpreter.c lib/logics/lexer/*.c lib/logics/parser/*.c
 
 all:

@@ -1,0 +1,7 @@
+*.exe
+*.o
+*.obj
+sundaLang.c
+hasil_kodingan
+hasil_kodingan.exe
+bin/
