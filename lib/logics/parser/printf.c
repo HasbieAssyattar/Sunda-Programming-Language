@@ -9,16 +9,10 @@ void ngagorowok(char* line){
     int isFirstArg = 1;
     int noNewline = 0;
 
-    START(line);
-    for(int i = 0; i < 9; i++) ADV(line); // skip "bombaclat"
+    start(line);
+    inc(line); // skip "Ngagorowok"
 
-    // cek apakah ada "- bop" di akhir
-    char* bopCheck = strstr(line, "- bop");
-    if(bopCheck != NULL){
-        noNewline = 1;
-        // potong sebelum "- bop"
-        bopCheck[-1] = '\0'; // hapus spasi sebelum -
-    }
+
 
     while(!EOP()){
         while (cc == ' ' && !EOP()) INC(line);

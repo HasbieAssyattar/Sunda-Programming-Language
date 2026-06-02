@@ -11,7 +11,7 @@ void legeg(char* line){
     addVariable(var_name, tipe);
 
     inc(line);
-    if (strcmp(getcw(), "is") == 0) {
+    if (strcmp(getcw(), "nyaeta") == 0) {
         inc(line);
         char* value = getcw();
         sprintf(line, "char %s = '%s';", var_name, value);

@@ -7,8 +7,8 @@ void parseAssignment(char* line){
     strcpy(lhs, getcw());  // ambil variabel kiri
     char* tipeLHS = getType(lhs);
 
-    inc(line); // ke 'is'
-    inc(line); // gabungkan semua token setelah 'is' sampai akhir baris ('\0')
+    inc(line); // ke 'nyaeta'
+    inc(line); // gabungkan semua token setelah 'nyaeta' sampai akhir baris ('\0')
     while(!eop(line)){
         if (strlen(rhs) > 0) strcat(rhs, " ");
         strcat(rhs, getcw());

@@ -8,7 +8,7 @@ void munteu(char* line){
 
     strcat(output, "}else if(");
     start(line);
-    inc(line);
+    inc(line); // skip munte
 
     while (1){
         char* token = getcw();

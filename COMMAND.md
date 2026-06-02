@@ -18,7 +18,7 @@
 | `saruagede` | `>=` |
 | `sarualetik` | `<=` |
 | `sarua` | `==` |
-| `teu sarua` | `!=` |
+| `teusarua` | `!=` |
 | `nyaeta` | `=` |
 
 ## Fungsi
@@ -27,7 +27,7 @@
 | `asupkeun` | `scanf` |
 | `Ngagorowok` | `printf` |
 | `mun` | `if` |
-| `mun nte` | `else if` |
+| `munte` | `else if` |
 | `nte` | `else` |
 | `Keur` | `while` |
 | `muter` | `for` |

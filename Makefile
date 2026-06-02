@@ -1,5 +1,5 @@
 BINARY=sundaLang
-SOURCES=sundaLang.c lib/logics/lexer/*.c lib/logics/parser/*.c
+SOURCES=sundaLang-interpreter.c lib/logics/lexer/*.c lib/logics/parser/*.c
 
 all:
 	gcc $(SOURCES) -o $(BINARY)

@@ -4,27 +4,26 @@ int error = 0;
 
 // fungsi untuk mengidentifikasi jenis token dari lexeme
 TokenType identifyTokenType(const char *lexeme) {
-    if (strcmp(lexeme, "skibidi") == 0 || strcmp(lexeme, "skibidiToilet") == 0 ||
-        strcmp(lexeme, "sigma") == 0 || strcmp(lexeme, "sigmaBoy") == 0)
+    if (strcmp(lexeme, "nomer") == 0 || strcmp(lexeme, "koma") == 0 ||
+        strcmp(lexeme, "legeg") == 0 || strcmp(lexeme, "legegpican") == 0)
         return DATA_TYPE;
 
-    if (strcmp(lexeme, "gyatt") == 0 || strcmp(lexeme, "bombaclat") == 0)
+    if (strcmp(lexeme, "asupkeun") == 0 || strcmp(lexeme, "Ngagorowok") == 0)
         return FUNCTION;
 
-    if (strcmp(lexeme, "goofy") == 0 || strcmp(lexeme, "ahh") == 0 ||
-        strcmp(lexeme, "sus") == 0 || strcmp(lexeme, "tungtungtung") == 0 ||
-        strcmp(lexeme, "lingaguliguli") == 0 || strcmp(lexeme, "bruh") == 0 ||
-        strcmp(lexeme, "sahur") == 0 || strcmp(lexeme, "tilz") == 0 ||
-        strcmp(lexeme, "unpause") == 0 || strcmp(lexeme, "bop") == 0)
+    if (strcmp(lexeme, "mun") == 0 || strcmp(lexeme, "nte") == 0 ||
+        strcmp(lexeme, "munte") == 0 || strcmp(lexeme, "muter") == 0 ||
+        strcmp(lexeme, "Keur") == 0 || strcmp(lexeme, "nuhun") == 0 ||
+        strcmp(lexeme, "sok") == 0)
         return KEYWORD;
 
-    if (strcmp(lexeme, "is") == 0)
+    if (strcmp(lexeme, "nyaeta") == 0)
         return ASSIGNMENT;
 
-    if (strcmp(lexeme, "butAlso") == 0 || strcmp(lexeme, "orNahh") == 0 ||
-        strcmp(lexeme, "peak") == 0 || strcmp(lexeme, "mid") == 0 ||
-        strcmp(lexeme, "mogged") == 0 || strcmp(lexeme, "cooked") == 0 ||
-        strcmp(lexeme, "match") == 0 || strcmp(lexeme, "hitdiff") == 0 ||
+    if (strcmp(lexeme, "jeung") == 0 || strcmp(lexeme, "atawa") == 0 ||
+        strcmp(lexeme, "gede") == 0 || strcmp(lexeme, "letik") == 0 ||
+        strcmp(lexeme, "saruagede") == 0 || strcmp(lexeme, "sarualetik") == 0 ||
+        strcmp(lexeme, "sarua") == 0 || strcmp(lexeme, "teusarua") == 0 ||
         strcmp(lexeme, "aura") == 0 || (lexeme[0] == '+' || lexeme[0] == '-') && isdigit(lexeme[1])||
         strcmp(lexeme, "+") == 0 || strcmp(lexeme, "-") == 0 ||
         strcmp(lexeme, "(") == 0 || strcmp(lexeme, ")") == 0 ||
@@ -58,9 +57,9 @@ TokenType identifyTokenType(const char *lexeme) {
     if (getType(lexeme) != NULL) return VARIABLE;
 
     if (strcmp(lexeme, ":") == 0) return OPEN_COL;
-    if (strcmp(lexeme, "stahp") == 0 ) return CLOSE_COL;
+    if (strcmp(lexeme, "}") == 0 ) return CLOSE_COL;
 
-    if (strcmp(lexeme, "danYappp") == 0) return TOKEN_EOP;
+    if (strcmp(lexeme, "nuhun") == 0) return TOKEN_EOP;
 
     // kalau masih belum ke return berarti itu UNKNOWN Token
     return UNKNOWN;
@@ -137,10 +136,10 @@ void tokenizeLine(const char* filename, char* line, int lineNumber) {
             type = identifyTokenType(token);
             if (type == DATA_TYPE) {
                 isExpectingVar = 1;
-                if (strcmp(token, "skibidi") == 0) strcpy(currentType, "int");
-                else if (strcmp(token, "skibidiToilet") == 0) strcpy(currentType, "float");
-                else if (strcmp(token, "sigma") == 0) strcpy(currentType, "char");
-                else if (strcmp(token, "sigmaBoy") == 0) strcpy(currentType, "string");
+                if (strcmp(token, "nomer") == 0) strcpy(currentType, "int");
+                else if (strcmp(token, "koma") == 0) strcpy(currentType, "float");
+                else if (strcmp(token, "legeg") == 0) strcpy(currentType, "char");
+                else if (strcmp(token, "legegpican") == 0) strcpy(currentType, "string");
                 else strcpy(currentType, token);
             } else if (type == IDENTIFIER && getType(token) != NULL) {
                 type = VARIABLE;

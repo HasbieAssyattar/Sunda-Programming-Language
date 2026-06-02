@@ -8,8 +8,8 @@ void asupkeun(char* line){
     char temp[1025] = "";
     int isFirstArg = 1;
 
-    START(line);
-    for(int i = 0; i < 5; i++) ADV(line); // skip "gyatt"
+    start(line);
+    inc(line); // skip "asupkeun"
 
     while(!EOP()){
         while(cc == ' ' && !EOP()) INC(line);
@@ -59,6 +59,6 @@ void asupkeun(char* line){
     if(strlen(args) > 0){
         sprintf(line, "scanf(\"%s\", %s);", formatStr, args);
     }else{
-        printf("Error: tidak ada variabel untuk diproses oleh gyatt!\n");
+        printf("Error: tidak ada variabel untuk diproses oleh asupkeun!\n");
     }
 }

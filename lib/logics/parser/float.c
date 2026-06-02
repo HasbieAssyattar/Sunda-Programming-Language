@@ -11,7 +11,7 @@ void koma(char* line){
     addVariable(var_name, tipe);
 
     inc(line);
-    if(strcmp(getcw(), "is") == 0){
+    if(strcmp(getcw(), "nyaeta") == 0){
         inc(line);
         char rhs[256] = "";
         // gabungkan semua token setelah 'is' sampai akhir baris
