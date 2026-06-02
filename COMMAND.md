@@ -30,7 +30,7 @@
 | `munte` | `else if` |
 | `nte` | `else` |
 | `Keur` | `while` |
-| `muter` | `for` |
+| `muter` | `for (muter [var] ti [start] nepi [end] :)` |
 | `sok` | `continue` |
 | `}` | `}` |
 | nuhun | return 0; |

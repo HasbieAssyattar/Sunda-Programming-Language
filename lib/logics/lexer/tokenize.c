@@ -14,7 +14,8 @@ TokenType identifyTokenType(const char *lexeme) {
     if (strcmp(lexeme, "mun") == 0 || strcmp(lexeme, "nte") == 0 ||
         strcmp(lexeme, "munte") == 0 || strcmp(lexeme, "muter") == 0 ||
         strcmp(lexeme, "Keur") == 0 || strcmp(lexeme, "nuhun") == 0 ||
-        strcmp(lexeme, "sok") == 0)
+        strcmp(lexeme, "sok") == 0 || strcmp(lexeme, "ti") == 0 || 
+        strcmp(lexeme, "nepi") == 0)
         return KEYWORD;
 
     if (strcmp(lexeme, "nyaeta") == 0)
@@ -115,12 +116,29 @@ void tokenizeLine(const char* filename, char* line, int lineNumber) {
             }
         }
 
-        // Jika bukan string, lanjutkan tokenisasi normal
-        while (!EOP() && GETCC() != ' ' && GETCC() != '\t') {
-            token[i++] = GETCC();
+        // Karakter simbol tunggal yang harus dipisah
+        char cc = GETCC();
+        if (cc == '(' || cc == ')' || cc == ';' || cc == ':' || cc == '+' || cc == '-' || cc == '*' || cc == '/' || cc == '%') {
+            token[i++] = cc;
             INC(line);
+            
+            // Cek untuk operator ganda seperti ++ atau --
+            if ((cc == '+' && GETCC() == '+') || (cc == '-' && GETCC() == '-')) {
+                token[i++] = GETCC();
+                INC(line);
+            }
+            token[i] = '\0';
+        } else {
+            // Jika bukan simbol, baca hingga ketemu spasi atau simbol
+            while (!EOP() && GETCC() != ' ' && GETCC() != '\t' && 
+                   GETCC() != '(' && GETCC() != ')' && GETCC() != ';' && 
+                   GETCC() != ':' && GETCC() != '+' && GETCC() != '-' &&
+                   GETCC() != '*' && GETCC() != '/' && GETCC() != '%') {
+                token[i++] = GETCC();
+                INC(line);
+            }
+            token[i] = '\0';
         }
-        token[i] = '\0';
         
         while ((GETCC() == ' ' || GETCC() == '\t') && !EOP()) {
             INC(line);
@@ -141,6 +159,9 @@ void tokenizeLine(const char* filename, char* line, int lineNumber) {
                 else if (strcmp(token, "legeg") == 0) strcpy(currentType, "char");
                 else if (strcmp(token, "legegpican") == 0) strcpy(currentType, "string");
                 else strcpy(currentType, token);
+            } else if (strcmp(token, "muter") == 0) {
+                isExpectingVar = 1;
+                strcpy(currentType, "int"); // Loop variable di muter dianggap int
             } else if (type == IDENTIFIER && getType(token) != NULL) {
                 type = VARIABLE;
             }

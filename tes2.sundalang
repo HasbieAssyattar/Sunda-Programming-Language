@@ -1,0 +1,18 @@
+nomer umur nyaeta 20
+koma jangkung nyaeta 1.75
+
+mun umur letik 18 :
+    ngagorowok "Anjeun masih leutik"
+munte umur sarua 18 :
+    ngagorowok "Anjeun geus dewasa"
+nte
+    ngagorowok "Anjeun geus kolot"
+}
+
+mun jangkung sarua 1.75 :
+    ngagorowok "Anjeun jangkung"
+nte
+    ngagorowok "Anjeun pendek"
+}
+
+nuhun
