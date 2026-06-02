@@ -1,0 +1,5 @@
+nomer a nyaeta 10
+legegpican ngaran nyaeta "Luthfi"
+legegpican baturna nyaeta "Riza"
+ngagorowok "Eta si " + ngaran + " jeung si " + baturna + " keur mabar ml"
+nuhun

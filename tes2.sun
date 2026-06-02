@@ -1,5 +1,7 @@
-nomer umur nyaeta 20
-koma jangkung nyaeta 1.75
+nomer umur
+koma jangkung
+asupkeun umur
+asupkeun jangkung
 
 mun umur letik 18 :
     ngagorowok "Anjeun masih leutik"
@@ -16,3 +18,4 @@ nte
 }
 
 nuhun
+

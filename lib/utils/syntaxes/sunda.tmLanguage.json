@@ -2,7 +2,8 @@
   "name": "sunda",
   "fileTypes": [
     "sundaLang",
-    "sundaan"
+    "sundaan",
+    "sun"
   ],
   "scopeName": "source.sundaLang",
   "patterns": [

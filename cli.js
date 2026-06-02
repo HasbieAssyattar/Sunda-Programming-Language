@@ -15,12 +15,12 @@ if (args.includes('--version') || args.includes('-v')) {
 
 // 2. Handling: --help atau -h
 if (args.includes('--help') || args.includes('-h')) {
-    console.log(`Usage: brot <filename.sundaLang> [options]`);
+    console.log(`Usage: brot <filename.sun> [options]`);
     console.log(`\nOptions:`);
     console.log(`  -h, --help     Menampilkan bantuan ini`);
     console.log(`  -v, --version  Menampilkan versi sundaLang`);
     console.log(`\nContoh:`);
-    console.log(`  brot example.sundaLang`);
+    console.log(`  brot example.sun`);
     process.exit(0);
 }
 
