@@ -33,4 +33,5 @@
 | `muter` | `for` |
 | `sok` | `continue` |
 | `}` | `}` |
-| `nuhun` | `return 0;` |
+| nuhun | return 0; |
+
