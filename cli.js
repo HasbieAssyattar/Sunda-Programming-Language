@@ -5,7 +5,7 @@ const os = require('os');
 const fs = require('fs');
 const packageJson = require('./package.json');
 
-const args = process.argv.slice(2); // Mengambil argumen setelah 'brot'
+const args = process.argv.slice(2); // Mengambil argumen setelah 'sun'
 
 // 1. Handling: --version atau -v
 if (args.includes('--version') || args.includes('-v')) {
@@ -15,31 +15,31 @@ if (args.includes('--version') || args.includes('-v')) {
 
 // 2. Handling: --help atau -h
 if (args.includes('--help') || args.includes('-h')) {
-    console.log(`Usage: brot <filename.sun> [options]`);
+    console.log(`Usage: sun <filename.sun> [options]`);
     console.log(`\nOptions:`);
     console.log(`  -h, --help     Menampilkan bantuan ini`);
     console.log(`  -v, --version  Menampilkan versi sundaLang`);
     console.log(`\nContoh:`);
-    console.log(`  brot example.sun`);
+    console.log(`  sun example.sun`);
     process.exit(0);
 }
 
 // 3. Handling: Jika tidak ada argumen sama sekali (Fatal Error)
 if (args.length === 0) {
-    console.error(`brot: fatal error: no input files`);
+    console.error(`sun: fatal error: no input files`);
     console.error(`compilation terminated.`);
     process.exit(1);
 }
 
 // Tentukan path binary berdasarkan OS
 const isWin = os.platform() === 'win32';
-const binaryName = isWin ? 'brot.exe' : 'brot';
+const binaryName = isWin ? 'sun.exe' : 'sun';
 const binaryPath = path.join(__dirname, 'bin', binaryName);
 
-// 4. Validasi keberadaan file input (.sundaLang)
+// 4. Validasi keberadaan file input (.sun)
 const inputFile = args[0];
 if (!fs.existsSync(inputFile)) {
-    console.error(`brot: error: ${inputFile}: No such file or directory`);
+    console.error(`sun: error: ${inputFile}: No such file or directory`);
     process.exit(1);
 }
 
