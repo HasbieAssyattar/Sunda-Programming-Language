@@ -1,0 +1,3 @@
+nomer umur nyaeta 20
+ngagorowok "Umur urang nyaeta: " + umur
+nuhun

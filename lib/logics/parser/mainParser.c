@@ -10,7 +10,7 @@ void mainParser(char* line){
     else if (strcmp(getcw(), "legeg") == 0) legeg(line);
     else if (strcmp(getcw(), "legegpican") == 0) legegpican(line);
     else if (strcmp(getcw(), "asupkeun") == 0) asupkeun(line);
-    else if(strcmp(getcw(), "Ngagorowok") == 0) ngagorowok(line);
+    else if(strcmp(getcw(), "ngagorowok") == 0) ngagorowok(line);
     else if(strcmp(getcw(), "muter") == 0) muter(line);
     else if(strcmp(getcw(), "Keur") == 0) keur(line);
     else if(strcmp(getcw(), "mun") == 0) mun(line);

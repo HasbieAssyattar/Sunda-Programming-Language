@@ -25,7 +25,7 @@
 | Sunda | Fungsi |
 | :--- | :--- |
 | `asupkeun` | `scanf` |
-| `Ngagorowok` | `printf` |
+| `ngagorowok` | `printf` |
 | `mun` | `if` |
 | `munte` | `else if` |
 | `nte` | `else` |

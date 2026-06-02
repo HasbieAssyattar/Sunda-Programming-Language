@@ -8,7 +8,7 @@ TokenType identifyTokenType(const char *lexeme) {
         strcmp(lexeme, "legeg") == 0 || strcmp(lexeme, "legegpican") == 0)
         return DATA_TYPE;
 
-    if (strcmp(lexeme, "asupkeun") == 0 || strcmp(lexeme, "Ngagorowok") == 0)
+    if (strcmp(lexeme, "asupkeun") == 0 || strcmp(lexeme, "ngagorowok") == 0)
         return FUNCTION;
 
     if (strcmp(lexeme, "mun") == 0 || strcmp(lexeme, "nte") == 0 ||
