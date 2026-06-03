@@ -66,6 +66,8 @@ extern int line_count;          // Total jumlah baris
 extern int curr_line;           // Baris saat ini
 // tokenize 
 extern int error;               // Value error, (jika nanti value nya 1, maka interpretasi akan gagal)
+extern int oneple_mode;        // Flag to enable one-per-line token output
+extern int ir_mode;             // Flag to enable intermediate code generation
 
 /* DEKLARASI PROSEDUR DAN FUNGSI */
 // Mesin karakter

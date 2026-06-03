@@ -1,6 +1,8 @@
 #include "lexer.h"
 
 int error = 0;
+int oneple_mode = 0;
+int ir_mode = 0;
 
 // fungsi untuk mengidentifikasi jenis token dari lexeme
 TokenType identifyTokenType(const char *lexeme) {
@@ -34,7 +36,6 @@ TokenType identifyTokenType(const char *lexeme) {
 
     int len = strlen(lexeme);
     if (len > 0 && lexeme[0] == '"' && lexeme[len - 1] == '"') {
-        printf("Detected string: %s\n", lexeme);  // Debug print
         return STRING;
     }
 
@@ -94,6 +95,11 @@ void tokenizeLine(const char* filename, char* line, int lineNumber) {
     char currentType[20];
     
     while (!EOP()) {
+        while ((GETCC() == ' ' || GETCC() == '\t') && !EOP()) {
+            INC(line);
+        }
+        if (EOP()) break;
+
         int startCol = GETIdx();
         char token[256];
         int i = 0;
@@ -197,22 +203,15 @@ void printToken(const char* filename, int lineNumber, int startCol, const char* 
     }
 
     // Mencetak token dengan warna dan tipe yang sesuai
+    if (oneple_mode) {
+        printf("| %-20s | %-20s |\n", token, tokenTypeToString(type));
+    }
+
     if(type == UNKNOWN){
-        printf(WHITE"%s:%d:%d:"RESET" %sERROR:%s \""WHITE"%s\""RESET" is not Recognized as a Token\n",
-            filename, lineNumber, startCol + 1, colorizeToken(type), "\033[0m", token);
+        if (!oneple_mode) {
+            printf(WHITE"%s:%d:%d:"RESET" %sKASALAHAN:%s \""WHITE"%s\""RESET" teu dikenal salaku Token\n",
+                filename, lineNumber, startCol + 1, colorizeToken(type), "\033[0m", token);
+        }
         error = 1;
-    }else{
-        // Uncomment kode dibawah jika kamu ingin mendebug lexeme token nya
-        // if(type == ASSIGNMENT || type == OPERATOR || type == OPEN_COL){
-        //     printf(WHITE"%s:%d:%d:"RESET" \"%s%s%s\" is Recognized as an \"%s\" Token\n",
-        //         filename, lineNumber, startCol + 1,
-        //         colorizeToken(type), token, "\033[0m",
-        //         tokenTypeToString(type));
-        // }else{
-        //     printf(WHITE"%s:%d:%d:"RESET" \"%s%s%s\" is Recognized as a \"%s\" Token\n",
-        //         filename, lineNumber, startCol + 1,
-        //         colorizeToken(type), token, "\033[0m",
-        //         tokenTypeToString(type));
-        // }    
     }
 }

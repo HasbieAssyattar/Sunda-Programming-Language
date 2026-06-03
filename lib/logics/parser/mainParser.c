@@ -20,5 +20,5 @@ void mainParser(char* line){
     else if(strcmp(getcw(), "}") == 0) strcpy(line, "}");
     else if (strstr(line, "nyaeta") != NULL) parseAssignment(line);
     else if(strcmp(getcw(), "nuhun") == 0) line[0] = '\0';
-    else sprintf(line, "// ERROR: keyword tidak dikenali %s", getcw());
+    else sprintf(line, "// KASALAHAN: kecap konci teu dikenal %s", getcw());
 }

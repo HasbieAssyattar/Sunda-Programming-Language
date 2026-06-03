@@ -44,7 +44,8 @@ void ngagorowok(char* line){
 
             char* tipe = getType(temp);
             if(tipe == NULL){
-                printf("Error: variabel '%s' belum dideklarasikan!\n", temp);
+                printf(RED "Kasalahan: variabel '%s' teu acan dideklarasikeun!\n" RESET, temp);
+                error = 1;
                 return;
             }
 

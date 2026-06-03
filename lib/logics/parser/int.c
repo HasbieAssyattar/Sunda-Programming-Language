@@ -14,19 +14,21 @@ void nomer(char* line){
     if(strcmp(getcw(), "nyaeta") == 0){ // jika deklarasi mengandung inisialisasi
         inc(line);
         char rhs[256] = "";
-        // gabungkan semua token setelah 'is' sampai akhir baris
-        while(!eop(line)){
+        while(1){
             if (strlen(rhs) > 0) strcat(rhs, " ");
             strcat(rhs, getcw());
+            if (eop(line)) break;
             inc(line);
         }
-        if(strlen(rhs) > 0) strcat(rhs, " ");
-        strcat(rhs, getcw());
         
-        // validasi ekspresi aritmatika dalam rhs
-        char temp[256];
-        strcpy(temp, rhs);
-        char* token = strtok(temp, " +-*/()%%");
+        // Semantic Analysis: Cek apakah RHS sesuai dengan tipe 'nomer' (int)
+        if (!isdigit(rhs[0]) && getType(rhs) == NULL && rhs[0] != '-') {
+             printf(RED "HAYU MAEN! Aya kasalahan dina baris %d: " RESET 
+                    "Variabel '%s' teh tipe 'nomer' (int), teu bisa diisi ku '%s'!\n", 
+                    curr_line + 1, var_name, rhs);
+             error = 1;
+        }
+
         sprintf(line, "int %s = %s;", var_name, rhs);
     }else{ // jika hanya deklarasi
         sprintf(line, "int %s;", var_name);

@@ -1,0 +1,12 @@
+legegpican ngaran nyaeta "Antigravity"
+nomer umur nyaeta 1
+koma versi nyaeta 2.0
+
+ngagorowok "Halo, ngaran abdi " + ngaran
+ngagorowok "Versi interpreter: " + versi
+
+mun umur gede 0 :
+    ngagorowok "System is active."
+}
+
+nuhun

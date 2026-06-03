@@ -29,7 +29,8 @@ void asupkeun(char* line){
 
         char* tipe = getType(temp);
         if(tipe == NULL){
-            printf("Error: variabel '%s' belum dideklarasikan!\n", temp);
+            printf(RED "Kasalahan: variabel '%s' teu acan dideklarasikeun!\n" RESET, temp);
+            error = 1;
             return;
         }
 
@@ -60,6 +61,7 @@ void asupkeun(char* line){
     if(strlen(args) > 0){
         sprintf(line, "scanf(\"%s\", %s);", formatStr, args);
     }else{
-        printf("Error: tidak ada variabel untuk diproses oleh asupkeun!\n");
+        printf(RED "Kasalahan: teu aya variabel pikeun diprosés ku asupkeun!\n" RESET);
+        error = 1;
     }
 }

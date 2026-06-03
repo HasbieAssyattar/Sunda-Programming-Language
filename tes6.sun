@@ -1,0 +1,19 @@
+nomer a nyaeta 10
+nomer b nyaeta 20
+
+mun a letik b jeung b gede 15 :
+    ngagorowok "Kondisi 1 bener"
+}
+
+mun a sarua 10 atawa b letik 5 :
+    ngagorowok "Kondisi 2 bener"
+}
+
+muter i ti 0 nepi 10 :
+    mun i sarua 5 :
+        sok
+    }
+    ngagorowok "Angka: " + i
+}
+
+nuhun

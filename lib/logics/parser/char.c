@@ -14,7 +14,11 @@ void legeg(char* line){
     if (strcmp(getcw(), "nyaeta") == 0) {
         inc(line);
         char* value = getcw();
-        sprintf(line, "char %s = '%s';", var_name, value);
+        if (value[0] == '\'' && value[strlen(value) - 1] == '\'') {
+            sprintf(line, "char %s = %s;", var_name, value);
+        } else {
+            sprintf(line, "char %s = '%s';", var_name, value);
+        }
     } else {
         sprintf(line, "char %s;", var_name);
     }

@@ -1,0 +1,7 @@
+nomer i nyaeta 0
+Keur i letik 5 :
+    ngagorowok "Iterasikeun ka-" + i
+    i nyaeta i + 1
+}
+
+nuhun
