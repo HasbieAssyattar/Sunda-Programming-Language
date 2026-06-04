@@ -1,0 +1,22 @@
+{
+  "name": "sundalang",
+  "version": "1.0.0",
+  "description": "Bahasa pemrograman berbasis Bahasa Sunda yang mentranspilasi kode ke C.",
+  "main": "cli.js",
+  "bin": {
+    "sun": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sunda",
+    "programming",
+    "language",
+    "interpreter",
+    "transpiler"
+  ],
+  "author": "Hasbie Assyattar",
+  "license": "MIT",
+  "dependencies": {}
+}
