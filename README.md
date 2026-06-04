@@ -1,7 +1,5 @@
 # 🔱 SundaLang: Basa Pamrograman Sunda
 
-![SundaLang Banner](sundalang_banner_1780538023575.png)
-
 **SundaLang** mangrupikeun basa pamrograman dumasar kana **Bahasa Sunda** formal anu ditranspilasi kana basa C. Proyek ieu dijieun pikeun ngagabungkeun kearifan lokal sareng téknologi modérn.
 
 > "Tulis logika programmu dina Basa Sunda, antepkeun compiler anu menterjemahkeun ka C sarta ngajalankeunana!"
