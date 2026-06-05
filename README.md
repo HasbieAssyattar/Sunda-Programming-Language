@@ -1,133 +1,94 @@
-# sundaLang 🇮🇩
+# 🔱 SundaLang: Basa Pamrograman Sunda
 
-Bahasa pemrograman berbasis Bahasa Sunda yang mentranspilasi kode ke C. Tulis logika programmu dalam Bahasa Sunda, biarkan compiler yang menerjemahkan ke C dan menjalankannya!
+**SundaLang** mangrupikeun basa pamrograman dumasar kana **Bahasa Sunda** formal anu ditranspilasi kana basa C. Proyek ieu dijieun pikeun ngagabungkeun kearifan lokal sareng téknologi modérn.
 
-## 📋 Fitur
+> "Tulis logika programmu dina Basa Sunda, antepkeun compiler anu menterjemahkeun ka C sarta ngajalankeunana!"
 
-- **Tipe Data Sunda**: `nomer` (int), `koma` (float), `legeg` (char), `legegpican` (string)
-- **Operator Logika**: `jeung` (&&), `atawa` (||), `gede` (>), `letik` (<), dll
-- **Kontrol Alur**: `mun` (if), `Keur` (while), `muter` (for)
-- **I/O**: `ngagorowok` (printf), `asupkeun` (scanf)
-- **Transpilation**: Kode Sunda → C → Executable
+---
 
-## 🚀 Cara Pemasangan
+## 💎 Fitur Utama
 
-### Prasyarat
-- GCC Compiler (untuk compile hasil transpile)
-- Node.js (untuk CLI wrapper)
-- Make (opsional, untuk build manual)
+- 🎨 **Sintaksis Lokal**: Ngagunakeun kekecapan asli Sunda pikeun logika program.
+- ⚡ **Performance C**: Hasil transpilasi langsung jadi binary C anu gancang.
+- 🛠️ **Multi-Mode**: Dilengkepan ku Standard Interpreter, Tokenizer View (Oneple), sareng Intermediate Representation (IR).
+- 📦 **CLI Terintegrasi**: Ngajalankeun file `.sun` sacara gampang nganggo paréntah global.
 
-### Instalasi
+---
 
-1. **Clone repository**
+## 📊 Tipe Data & Kata Kunci
+
+| Kategori | Sundanese | C Equivalent |
+| :--- | :--- | :--- |
+| **Variabel** | `nomer`, `koma`, `legeg`, `legegpican` | `int`, `float`, `char`, `string` |
+| **Logika** | `jeung`, `atawa`, `gede`, `letik`, `sarua` | `&&`, `||`, `>`, `<`, `==` |
+| **Kontrol** | `mun`, `munte`, `nte`, `Keur`, `muter` | `if`, `else if`, `else`, `while`, `for` |
+| **I/O** | `ngagorowok`, `asupkeun` | `printf`, `scanf` |
+| **Lainna** | `nyaeta`, `aura`, `nuhun` | `=`, `++`/`--`, `return 0` |
+
+---
+
+## 🚀 Pamasangan (Installation)
+
+Anjeun tiasa milih salah sahiji metodeu di handap pikeun ngagunakeun SundaLang:
+
+### Metodeu 1: Ngagunakeun `npm link` (Rekomendasi)
+Supados paréntah `sun` tiasa diaksés ti mana waé:
+1. Buka terminal dina folder proyek SundaLang.
+2. Jalankeun paréntah:
+   ```bash
+   npm link
+   ```
+3. Ayeuna anjeun tiasa ngajalankeun file `.sun` langsung:
+   ```bash
+   sun tes1.sun
+   ```
+
+### Metodeu 2: Ngawangun (Build) ti Source
+Upami anjeun hoyong ngawangun binary sacara manual:
 ```bash
-git clone https://github.com/nluthfi/sundaLang.git
-cd sundaLang
-```
-
-2. **Install dependencies**
-```bash
-npm install
-```
-
-3. **Build interpreter C**
-```bash
+# Build sadaya interpreter
 make
 ```
+Binary bakal aya dina folder `bin/`.
 
-4. **Install ke system (opsional)**
-```bash
-sudo make install
-```
+---
 
-## 💻 Cara Penggunaan
+## 📝 Conto Kode (`halo.sun`)
 
-### Menjalankan file .sun
+```sundanese
+legegpican pesen nyaeta "Wilujeng Sumping di SundaLang!"
+ngagorowok pesen
 
-```bash
-sun contoh.sun
-```
+nomer angka1 nyaeta 10
+nomer angka2 nyaeta 20
+nomer hasil nyaeta angka1 + angka2
 
-atau langsung pakai binary C:
-
-```bash
-./sun contoh.sun
-```
-
-### Contoh Program
-
-Buat file `halo.sun`:
-
-```sunda
-legegpican pesen nyaeta "Halo Dunia!"
-ngagorowok(pesen)
+ngagorowok "Hasil panambahan nyaeta: " + hasil
 nuhun
 ```
 
-Jalankan:
-```bash
-sun halo.sun
-```
-
-Output:
-```
-Halo Dunia!
-Interpretation successful!
-```
-
-### Contoh dengan Input
-
-```sunda
-nomer umur
-ngagorowok("Masukkan umur: ")
-asupkeun("%d", &umur)
-mun umur gede 17 {
-    ngagorowok("Sudah dewasa")
-} nte {
-    ngagorowok("Belum dewasa")
-}
-nuhun
-```
-
-### Contoh Loop
-
-```sunda
-muter i ti 0 nepi 5 : {
-    ngagorowok("%d\n", i)
-}
-nuhun
-```
-
-## 📖 Dokumentasi Lengkap
-
-Lihat [COMMAND.md](COMMAND.md) untuk daftar lengkap perintah dan sintaks.
+---
 
 ## 🏗️ Struktur Proyek
 
-```
+```text
 sundaLang/
-├── sundaLang.c          # Interpreter utama (C)
-├── cli.js               # CLI wrapper (Node.js)
-├── lib/
-│   └── logics/
-│       ├── lexer/       # Tokenizer
-│       └── parser/      # Parser
-├── Makefile             # Build script
-└── COMMAND.md           # Dokumentasi perintah
+├── bin/                    # Lokasi binary hasil build
+├── lib/logics/
+│   ├── lexer/              # Lexical Analysis (Tokenizer)
+│   └── parser/             # Semantic Analysis & Parsing
+├── sundaLang-interpreter.c # Core Interpreter
+├── cli.js                  # Node.js CLI Wrapper
+├── COMMAND.md              # Dokumentasi lengkap sintaksis
+└── Makefile                # Script otomatisasi build
 ```
 
-## 🔧 Development
+---
 
-### Compile Manual
-```bash
-gcc sundaLang.c lib/logics/lexer/*.c lib/logics/parser/*.c -o sun
-```
+## 🤝 Kontribusi
+Wilujeng sumping pikeun saha waé anu hoyong ngembangkeun basa ieu! Mangga fork sareng kirimkeun Pull Request.
 
-### Menambah Fitur Baru
-1. Tambahkan token baru di `lib/logics/lexer/`
-2. Update parser di `lib/logics/parser/`
-3. Test dengan file `.sun` sederhana
+---
 
 ## 📄 Lisensi
-
-Proyek ini bersifat open-source. Silakan fork dan kontribusi!
+Proyek ieu lisensina handapeun **MIT License**.
