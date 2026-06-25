@@ -1,0 +1,44 @@
+{
+  "name": "sunda",
+  "fileTypes": [
+    "sundaLang",
+    "sundaan",
+    "sun"
+  ],
+  "scopeName": "source.sundaLang",
+  "patterns": [
+    {
+      "name": "keyword.control.sundaLang",
+      "match": "\\b(mun|munte|nte|Keur|muter|sok|nuhun)\\b"
+    },
+    {
+      "name": "storage.type.sundaLang",
+      "match": "\\b(nomer|koma|legeg|legegpican)\\b"
+    },
+    {
+      "name": "support.function.sundaLang",
+      "match": "\\b(asupkeun|ngagorowok)\\b"
+    },
+    {
+      "name": "keyword.operator.sundaLang",
+      "match": "\\b(jeung|atawa|gede|letik|saruagede|sarualetik|sarua|teusarua|nyaeta)\\b"
+    },
+    {
+      "name": "string.quoted.double.sundaLang",
+      "begin": "\"",
+      "end": "\""
+    },
+    {
+      "name": "constant.numeric.sundaLang",
+      "match": "\\b\\d+(\\.\\d+)?\\b"
+    },
+    {
+      "name": "variable.sundaLang",
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+    },
+    {
+        "name": "punctuation.section.sundaLang",
+        "match": "(:|})"
+    }
+  ]
+}
